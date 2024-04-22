@@ -1,7 +1,7 @@
 import React from "react";
 import SlideShow from "../../SlideShow/SlideShow";
 
-function App() {
+function About() {
   return (
     <div>
       <h1>APIE MUS</h1>
@@ -11,4 +11,4 @@ function App() {
   );
 }
 
-export default App;
+export default About;

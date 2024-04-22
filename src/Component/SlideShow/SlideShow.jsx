@@ -1,56 +1,51 @@
 import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { Slide } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
 
-const SlideShow = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-
-  return (
-    <Slider {...settings}>
-      <div>
-        <img src="nuotrauka1.jpg" alt="Nuotrauka 1" />
-      </div>
-      <div>
-        <img src="nuotrauka2.jpg" alt="Nuotrauka 2" />
-      </div>
-      <div>
-        <img src="nuotrauka3.jpg" alt="Nuotrauka 3" />
-      </div>
-    </Slider>
-  );
+const spanStyle = {
+  padding: "20px",
+  background: "#efefef",
+  color: "#000000",
 };
 
-export default SlideShow;
+const divStyle = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  backgroundSize: "cover",
+  height: "400px",
+  width: "500px",
+};
+const slideImages = [
+  {
+    url: "https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+    caption: "Slide 1",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80",
+    caption: "Slide 2",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+    caption: "Slide 3",
+  },
+];
+
+const Slideshow = () => {
+  return (
+    <div className="slide-container">
+      <Slide>
+        {slideImages.map((slideImage, index) => (
+          <div key={index}>
+            <div
+              style={{ ...divStyle, backgroundImage: `url(${slideImage.url})` }}
+            >
+              <span style={spanStyle}>{slideImage.caption}</span>
+            </div>
+          </div>
+        ))}
+      </Slide>
+    </div>
+  );
+};
+export default Slideshow;

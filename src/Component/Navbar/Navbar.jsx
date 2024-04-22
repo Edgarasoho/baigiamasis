@@ -4,12 +4,12 @@ import "./Navbar.scss";
 function Navbar() {
   return (
     <nav className="nav">
-      <Link to="/" className="site-title">
-        <img src={logo} height={150} width={500} />
-      </Link>
+      <img src={logo} height={150} width={500} />
+      <Link to="/Home">Home</Link>
       <ul>
-        <CustomLink to="/pricing">Produktai</CustomLink>
+        <CustomLink to="/product">Produktai</CustomLink>
         <CustomLink to="/about">Apie mus</CustomLink>
+        <CustomLink to="/contact">Kontaktai</CustomLink>
       </ul>
     </nav>
   );
