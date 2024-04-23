@@ -1,7 +1,14 @@
-.cards {
+.cards-box {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  color: rgb(243, 2, 2);
   gap: 2rem;
-  width: 200px;
+}
+.cards {
+  text-align: center;
+  display: flex;
+  border: 2px solid black;
+  color: rgb(186, 12, 12);
+  gap: 2rem;
 }
