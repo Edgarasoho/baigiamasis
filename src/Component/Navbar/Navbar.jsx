@@ -1,21 +1,27 @@
+import React from "react";
+import { slide as Menu } from "react-burger-menu";
+
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import logo from "../Images/Logotipas.png";
 
 import "./Navbar.scss";
 
-function Navbar() {
+const CustomBurgerIcon = () => <img src="path/to/your/icon.png" />;
+
+const Navbar = () => {
   return (
     <nav className="nav">
       <img src={logo} height={150} width={500} />
-      <Link to="/Home">Home</Link>
       <ul>
+        <Link to="/Home">Home</Link>
+
         <CustomLink to="/product">Produktai</CustomLink>
         <CustomLink to="/about">Apie mus</CustomLink>
         <CustomLink to="/contact">Kontaktai</CustomLink>
       </ul>
     </nav>
   );
-}
+};
 
 function CustomLink({ to, children, ...props }) {
   const resolvedPath = useResolvedPath(to);

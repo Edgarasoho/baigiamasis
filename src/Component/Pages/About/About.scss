@@ -7,3 +7,14 @@
   width: 100%;
   gap: 2rem;
 }
+.par {
+  font-size: 1rem;
+  padding: 0 15rem;
+  color: aliceblue;
+}
+@media (max-width: 768px) {
+  .par {
+    font-size: 1rem;
+    padding: 0 2rem;
+  }
+}
