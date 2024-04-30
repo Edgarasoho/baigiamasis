@@ -1,7 +1,6 @@
-.contatc {
+.contatc h1 {
   display: flex;
-  justify-content: center;
-  align-items: center;
+
   height: 100vh;
   background: #000;
   color: #ffc107;
@@ -9,8 +8,10 @@
 .contact-info {
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-end;
   align-items: center;
   flex-direction: column;
   color: #ffc107;
   font-size: 20px;
+  margin: 1rem;
 }

@@ -1,6 +1,8 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import logo from "../Images/Logotipas.png";
+
 import "./Navbar.scss";
+
 function Navbar() {
   return (
     <nav className="nav">

@@ -1,46 +1,39 @@
 import React from "react";
-import { Slide } from "react-slideshow-image";
-import "react-slideshow-image/dist/styles.css";
+import Slider from "react-slick";
+import "./Slider.scss";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import image from "./SlideImage/DJI_0089.jpg";
+import image2 from "./SlideImage/IMG_2538.JPG";
+import image3 from "./SlideImage/IMG_20230413_165316.jpg";
 
-const spanStyle = {
-  padding: "20px",
-};
+const ImageSlider = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  };
 
-const divStyle = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  backgroundSize: "cover",
-  height: "400px",
-  width: "500px",
-};
-const slideImages = [
-  {
-    url: "https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-  },
-];
-
-const Slideshow = () => {
   return (
-    <div className="slide-container">
-      <Slide>
-        {slideImages.map((slideImage, index) => (
-          <div key={index}>
-            <div
-              style={{ ...divStyle, backgroundImage: `url(${slideImage.url})` }}
-            >
-              <span style={spanStyle}>{slideImage.caption}</span>
-            </div>
-          </div>
-        ))}
-      </Slide>
-    </div>
+    <Slider className="slider" {...settings}>
+      <div>
+        <img src={image} height={400} width={400} />
+      </div>
+      <div>
+        <img src={image2} height={400} width={400} />
+      </div>
+      <div>
+        <img src={image3} height={400} width={400} />
+      </div>
+      <div>
+        <img src={image} height={400} width={400} />
+      </div>
+    </Slider>
   );
 };
-export default Slideshow;
+
+export default ImageSlider;

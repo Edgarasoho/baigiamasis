@@ -2,13 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  text-align: center;
+
+  font-size: 2rem;
   color: rgb(243, 2, 2);
   gap: 2rem;
-}
-.cards {
-  text-align: center;
-  display: flex;
-  border: 2px solid black;
-  color: rgb(186, 12, 12);
-  gap: 2rem;
+  margin: 2rem;
 }
